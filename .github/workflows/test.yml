@@ -6,7 +6,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Compile
-        uses: .
+        uses: ./
         with:
           source: test.c
           target: hello_world
