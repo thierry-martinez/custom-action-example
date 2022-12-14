@@ -13,7 +13,7 @@ jobs:
       - name: Test
         run: |
           echo "::group::Check if output is expected"
-          ./hello_word > output.txt
+          ./hello_world > output.txt
           diff output.txt excepted.txt
           echo "::endgroup::"
 
