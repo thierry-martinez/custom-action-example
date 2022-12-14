@@ -1,0 +1,13 @@
+inputs:
+  source:
+    required: true
+  target:
+    required: true
+
+runs:
+  using: 'composite'
+  steps:
+    - uses: ammaraskar/gcc-problem-matcher@master
+    - name: Compile
+      run: |
+        gcc -o ${{inputs.target}} ${{inputs.source}}

@@ -1,0 +1,19 @@
+on: [push]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Compile
+        uses: ./action.yml
+        with:
+          source: test.c
+          target: hello_world
+      - name: Test
+        run: |
+          echo "::group::Check if output is expected"
+          ./hello_word > output.txt
+          diff output.txt excepted.txt
+          echo "::endgroup::"
+
