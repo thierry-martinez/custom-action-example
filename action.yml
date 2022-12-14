@@ -11,3 +11,4 @@ runs:
     - name: Compile
       run: |
         gcc -o ${{inputs.target}} ${{inputs.source}}
+      shell: bash
